@@ -1,0 +1,85 @@
+*{
+   margin:0;
+   padding:0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.qcm {
+  position: relative;
+  min-width: 600px;
+  min-height: 400px;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #BDBDBD;
+  padding: 5px;
+}
+
+.qcmButton {
+  width: 200px;
+  margin-left: 20px;
+  height: 100px;
+  margin-top: 5px;
+}
+
+.giveUpButton {
+  margin-top: 25px;
+  color: #FF0000;
+}
+
+.okButton {
+  margin-top: 20px;
+  color: #04B404;
+}
+
+.right, .wrong {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.right {
+  border-color: #64FE2E;
+}
+
+.wrong {
+  border-color: #FF0000;
+}
+
+/* Learning Qcm */
+
+#learningQcmText {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+#learningQcmButtons {
+  width: 440px;
+  margin: auto;
+}
+
+#countdown {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+}
+
+#qcmPauseButton {
+  position: absolute;
+  right: 10px;
+  width: 75px;
+  height: 30px;
+  font-size: 10px;
+  font-weight: 10px;
+}
