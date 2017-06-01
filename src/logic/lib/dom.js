@@ -62,9 +62,17 @@ function addLearningOkButton() {
   addButtonToQcm('learningQcm', 'Ok', 'displayLearningQcmQuestion', '', 'okButton');
 }
 
-function resetQcmButtons(id) {
+function getAllQcmButtons(id) {
   const qcmId = parseHtmlId(id);
-  $(`${qcmId} .qcmButton`).remove();
+  return $(`${qcmId} .qcmButton`);
+}
+
+function disableQcmButtons(id) {
+  getAllQcmButtons(id).attr('onclick', '');
+}
+
+function resetQcmButtons(id) {
+  getAllQcmButtons(id).remove();
 }
 
 function countdown(time, countdownFunction, params) {

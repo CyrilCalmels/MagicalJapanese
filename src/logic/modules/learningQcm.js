@@ -45,6 +45,7 @@ function displayLearningQcmQuestion() {
 
 function answerLearning(givenAnswer) {
   stopCountDown();
+  disableQcmButtons('learningQcm');
   const {wordToGuess, languageToGuess, answer} = _currentQuestion;
   const buttons = $('.qcmButton');
   let rightButton, selectedButton;
@@ -81,7 +82,7 @@ function answerLearning(givenAnswer) {
 function pause() {
   if (!_pause) {
     stopCountDown();
-    resetQcmButtons();
+    resetQcmButtons('learningQcm');
     $('#learningQcmText').text('Pause');
     $('#countdown').text('');
     $('#qcmPauseButton').text('Reprendre');
