@@ -18,7 +18,11 @@ function displayLearningQcmQuestion() {
     french: 'toFrenchSuccess',
     japanese: 'toJapaneseSuccess'
   }
-  _currentQuestion = getUnknownWord(_LEARNINGQCM.KNOWNSCORE, _LEARNINGQCM.NBANSWERS);
+  _currentQuestion = getUnknownWord(
+    _LEARNINGQCM.KNOWNSCORE,
+    _LEARNINGQCM.NBANSWERS,
+    _lastWord
+  );
   resetQcmButtons('learningQcm');
   if (_currentQuestion === null) {
     changeQcmText('learningQcm', 'Leçon terminée !');
@@ -35,6 +39,7 @@ function displayLearningQcmQuestion() {
       answerLearning,
       'Je ne sais pas...'
     );
+    _lastWord = wordToGuess;
   }
 }
 

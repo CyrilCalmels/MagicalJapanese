@@ -39,7 +39,7 @@ function loadLesson(lesson, reset) {
   }
 }
 
-function getUnknownWord(knownScore, numberQcmAnswers) {
+function getUnknownWord(knownScore, numberQcmAnswers, lastWord) {
   const unknownWords = [];
   for (const word of _currentLesson) {
     if (
@@ -49,10 +49,15 @@ function getUnknownWord(knownScore, numberQcmAnswers) {
       unknownWords.push(word)
     }
   }
-  const nbUnknownWords = unknownWords.length;
+  let nbUnknownWords = unknownWords.length;
   const nbLessonWords = _currentLesson.length;
   if (nbUnknownWords === 0) {
     return null;
+  }
+  const lastWordIndex = unknownWords.indexOf(lastWord);
+  if (nbUnknownWords > 1 && lastWordIndex > -1) {
+    unknownWords.splice(lastWordIndex, 1);
+    nbUnknownWords--;
   }
   const wordToGuess = unknownWords[rangeRand(0, nbUnknownWords - 1)];
   let languageToGuess = rangeRand(1,2);
